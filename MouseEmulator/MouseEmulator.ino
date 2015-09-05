@@ -29,29 +29,25 @@ void loop() {
   digitalWrite(ledPin, LOW);    // set the LED off
   delay(1000);                  // wait for a second
 
-  int cnt;
   int i;
   // Move the mouse to the minimize button
-  for (i=0; i<20; i++) {
+  for (i=0; i<80; i++) {
     Mouse.move(127, -127);
   }
   Mouse.move(-88, 10);
 
-  // Click the mouse button
-  left = 1;
-  Mouse.set_buttons(left, middle, right);
-  delay(10);
-  left = 0;
-  Mouse.set_buttons(left, middle, right);
-  delay(10);
-  
+  myLeftMouseClick();
 
   // Move the mouse to the start buttn
-  for (i=0; i<20; i++) {
+  for (i=0; i<80; i++) {
     Mouse.move(-127, 127);
   }
   Mouse.move(10, 10);
 
+  myLeftMouseClick();
+}
+
+void myLeftMouseClick(){
   // Click the mouse button
   left = 1;
   Mouse.set_buttons(left, middle, right);
